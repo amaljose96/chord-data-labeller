@@ -117,9 +117,10 @@ num_chords=0
 for beat_data in data:
     print("For beat "+str(beat_no));
     sys.stdout.write("\033[F")
-    s.start();
-    for samples in beat_data:
-        s.write(samples)
+    if(default_chord==""):
+        s.start();
+        for samples in beat_data:
+            s.write(samples)
     if(default_chord==""):
         chord=raw_input("Enter chord:"+str(keys)+" "+str(variations)+" : ")
     else:
