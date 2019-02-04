@@ -26,7 +26,7 @@ Each scale can have 10 variations each. So we have 120 class labels.
 
 """
 
-keys=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+keys=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"]
 variations=["maj","min","maj7","sus4"]
 
 def getClassLabel(chord):
@@ -56,13 +56,13 @@ def getClassLabel(chord):
         variation="maj7"
     if(variation=="m7"):
         variation="min7"
-    keys=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+    keys=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"]
     variations=["maj","min","maj7","sus4"]
     if(key not in keys):
         return -1;
     if(variation not in variations):
         return -1;
-    return keys.index(key)*10+variations.index(variation);
+    return keys.index(key)*10+variations.index(variation)
 
 
 
@@ -102,7 +102,7 @@ s = Stream(samplerate = sample_rate, blocksize = hop_s)
 beat_no=0
 
 #Get input from user and save to file
-outputfilename="_".join(data_name.split('_')[0:-1])+"_labelled.txt";
+outputfilename="_".join(data_name.split('_')[0:-1])+"_labelled.txt"
 outputfile=open(outputfilename,"w")
 
 #Checking if Auto Mode
@@ -124,7 +124,7 @@ for beat_data in data:
     if(default_chord==""):
         chord=raw_input("Enter chord:"+str(keys)+" "+str(variations)+" : ")
     else:
-        previous_chord=default_chord;
+        previous_chord=default_chord
         chord=""
         print("Using default chord  : "+default_chord)    
     if(chord==""):
