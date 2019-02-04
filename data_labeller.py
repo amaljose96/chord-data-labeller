@@ -78,6 +78,7 @@ data_name=sys.argv[1]
 inputfile=open(data_name,"r")
 inputdata=[]
 data=[]
+print("Opened "+data_name)
 print("Loading data..")
 
 for line in inputfile:
@@ -106,7 +107,7 @@ outputfile=open(outputfilename,"w")
 
 #Checking if Auto Mode
 default_chord="";
-if( getClassLabel ( (data_name.split('_'))[0] ) == 0 ):
+if( getClassLabel ( (data_name.split('_'))[0] ) != -1 ):
     default_chord=(data_name.split('_'))[0]
     print("Auto mode")
 
